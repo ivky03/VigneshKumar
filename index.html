@@ -4,67 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vignesh Kumar Karthikeyan - Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="bg-dark text-white text-center py-5">
         <h1>Vignesh Kumar Karthikeyan</h1>
-        <p>720-655-0376 | <a href="mailto:kvk1011@gmail.com">kvk1011@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/k-vignesh-kumar/">LinkedIn</a> | <a href="https://github.com/ivky03">GitHub</a></p>
+        <p>720-655-0376 | <a href="mailto:kvk1011@gmail.com" class="text-white">kvk1011@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/k-vignesh-kumar/" class="text-white">LinkedIn</a> | <a href="https://github.com/ivky03" class="text-white">GitHub</a></p>
     </header>
-    <section>
-        <h2>Education</h2>
-        <p><strong>University of Colorado Boulder</strong>, Boulder, USA<br>
-        Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00) Aug 2023 – May 2025</p>
-        <p><strong>College of Engineering Guindy, Anna University</strong>, Chennai, India<br>
-        B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00) Aug 2019 – Apr 2023</p>
-    </section>
-    <section>
-        <h2>Technical Skills</h2>
-        <p>Languages: Java, Python, C, C++, Shell Script, HTML/CSS, R, JavaScript, Go, GraphQL</p>
-        <p>Databases: MySQL, Firebase, IBM DB2, Postgres</p>
-        <p>AI and Cloud Services, Developer Tools: AWS, Docker, Kubernetes, Jupyter Notebook, Google Collab, VS Code, PyCharm, IntelliJ, Eclipse, GitHub</p>
-    </section>
-    <section>
-        <h2>Experience</h2>
-        <p><strong>HVAC Data Automation Developer</strong>, University of Colorado Boulder - Facilities Management, Boulder, USA<br>
-        Oct 2023 – Apr 2024</p>
-        <ul>
-            <li>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow.</li>
-            <li>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500.</li>
-        </ul>
-        <p><strong>IT Client Engineer</strong>, Intel Corporation, Bangalore, India<br>
-        Jan 2023 – Jun 2023</p>
-        <ul>
-            <li>Automated JSON data extraction for 65000 devices through REST APIs.</li>
-            <li>Conducted analysis on around 80,000+ Intel devices.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Projects</h2>
-        <p><strong>Movie Recommendation Engine and Revenue Prediction</strong>, Python, Machine Learning, Dec 2023</p>
-        <ul>
-            <li>Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy.</li>
-            <li>Developed a hybrid movie recommendation system combining collaborative and content filtering.</li>
-        </ul>
-        <p><strong>Wind Power Prediction using Ensemble Learning</strong>, Python, TensorFlow, XGBoost, Apr 2023</p>
-        <ul>
-            <li>Developed an ensemble model improving wind farm output prediction accuracy to 82%.</li>
-            <li>Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</li>
-        </ul>
-        <p><strong>Simple ChatBot for Retail Store</strong>, Python, PyTorch, NLTK, Apr 2022</p>
-        <ul>
-            <li>Designed a conversational chatbot leveraging NLTK and deep learning techniques.</li>
-            <li>Automated responses to 95% of common product questions, increasing customer satisfaction.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Certifications and Extracurriculars</h2>
-        <p>Director of the American Association of Engineers of Indian Origin (AAEIO) - CU Boulder Chapter</p>
-        <p>Toastmasters Certification - Presentation Mastery 1 (PM1)</p>
-        <p>Courses: Generative AI, Data Structures in Python, Data Analytics: Pandas, Foundations of User Experience Design</p>
-        <p>Foreign Languages: JLPT N5 Japanese, DELF A1 French</p>
-        <p>Competitions: Received Special Select for the 2017 International Teenager Design and Art Award and awarded second position at the finals held at Busan, South Korea.</p>
-    </section>
+
+    <div class="container my-5">
+        <section>
+            <h2>Education</h2>
+            <p><strong>University of Colorado Boulder</strong>, Boulder, USA<br>
+            Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00) Aug 2023 – May 2025</p>
+            <p><strong>College of Engineering Guindy, Anna University</strong>, Chennai, India<br>
+            B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00) Aug 2019 – Apr 2023</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <p>Languages: Java, Python, C, C++, Shell Script, HTML/CSS, R, JavaScript, Go, GraphQL</p>
+            <p>Databases: MySQL, Firebase, IBM DB2, Postgres</p>
+            <p>AI and Cloud Services, Developer Tools: AWS, Docker, Kubernetes, Jupyter Notebook, Google Collab, VS Code, PyCharm, IntelliJ, Eclipse, GitHub</p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <p><strong>HVAC Data Automation Developer</strong>, University of Colorado Boulder - Facilities Management, Boulder, USA<br>
+            Oct 2023 – Apr 2024</p>
+            <ul>
+                <li>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow.</li>
+                <li>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500.</li>
+            </ul>
+            <p><strong>IT Client Engineer</strong>, Intel Corporation, Bangalore, India<br>
+            Jan 2023 – Jun 2023</p>
+            <ul>
+                <li>Automated JSON data extraction for 65000 devices through REST APIs.</li>
+                <li>Conducted analysis on around 80,000+ Intel devices.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div id="projectCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-block w-100">
+                            <h3>Movie Recommendation Engine and Revenue Prediction</h3>
+                            <p>Python, Machine Learning, Dec 2023</p>
+                            <ul>
+                                <li>Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy.</li>
+                                <li>Developed a hybrid movie recommendation system combining collaborative and content filtering.</li>
+                                <li><a href="#" data-toggle="modal" data-target="#movieRecommendationModal">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-block w-100">
+                            <h3>Wind Power Prediction using Ensemble Learning</h3>
+                            <p>Python, TensorFlow, XGBoost, Apr 2023</p>
+                            <ul>
+                                <li>Developed an ensemble model improving wind farm output prediction accuracy to 82%.</li>
+                                <li>Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</li>
+                                <li><a href="#" data-toggle="modal" data-target="#windPowerPredictionModal">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-block w-100">
+                            <h3>Simple ChatBot for Retail Store</h3>
+                            <p>Python, PyTorch, NLTK, Apr 2022</p>
+                            <ul>
+                                <li>Designed a conversational chatbot leveraging NLTK and deep learning techniques.</li>
+                                <li>Automated responses to 95% of common product questions, increasing customer satisfaction.</li>
+                                <li><a href="#" data-toggle="modal" data-target="#chatBotModal">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Movie Recommendation Modal -->
+    <div class="modal fade" id="movieRecommendationModal" tabindex="-1" role="dialog" aria-labelledby="movieRecommendationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieRecommendationModalLabel">Movie Recommendation Engine and Revenue Prediction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Python, Machine Learning, Dec 2023</p>
+                    <ul>
+                        <li>Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy.</li>
+                        <li>Developed a hybrid movie recommendation system combining collaborative and content filtering.</li>
+                        <li>GitHub Repository: <a href="https://github.com/ivky03/Movie-Recommendation-System" target="_blank">Movie Recommendation System</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wind Power Prediction Modal -->
+    <div class="modal fade" id="windPowerPredictionModal" tabindex="-1" role="dialog" aria-labelledby="windPowerPredictionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="windPowerPredictionModalLabel">Wind Power Prediction using Ensemble Learning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Python, TensorFlow, XGBoost, Apr 2023</p>
+                    <ul>
+                        <li>Developed an ensemble model improving wind farm output prediction accuracy to 82%.</li>
+                        <li>Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</li>
+                        <li>GitHub Repository: <a href="https://github.com/ivky03/Wind-Power-Forecasting-using-Ensemble-Learning" target="_blank">Wind Power Forecasting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ChatBot Modal -->
+    <div class="modal fade" id="chatBotModal" tabindex="-1" role="dialog" aria-labelledby="chatBotModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatBotModalLabel">Simple ChatBot for Retail Store</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Python, PyTorch, NLTK, Apr 2022</p>
+                    <ul>
+                        <li>Designed a conversational chatbot leveraging NLTK and deep learning techniques.</li>
+                        <li>Automated responses to 95% of common product questions, increasing customer satisfaction.</li>
+                        <li>GitHub Repository: <a href="https://github.com/ivky03/Chat-Box-for-retail-store" target="_blank">Chat Box for Retail Store</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send message: ' + error);
+                });
+        });
+    </script>
 </body>
 </html>

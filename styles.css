@@ -17,11 +17,12 @@ header h1 {
 }
 
 section {
-    margin: 2em;
+    margin: 2em 0;
 }
 
 section h2 {
     color: #333;
+    margin-bottom: 1em;
 }
 
 a {
@@ -31,4 +32,25 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.carousel-inner > .carousel-item {
+    text-align: center;
+    padding: 2em;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.carousel-inner > .carousel-item h3 {
+    margin-bottom: 1em;
+}
+
+.carousel-inner > .carousel-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.carousel-inner > .carousel-item ul li {
+    text-align: left;
 }
