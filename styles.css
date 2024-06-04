@@ -7,13 +7,14 @@ body {
 }
 
 header {
-    background: #007bff;
+    background: linear-gradient(135deg, #6d5dfc, #d350c7);
     color: #fff;
     padding: 1em 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header img {
+header .profile-img {
     border: 5px solid #fff;
 }
 
@@ -27,6 +28,15 @@ header h1 {
 
 section {
     margin: 2em 0;
+    background: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.introduction {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+    color: #fff;
 }
 
 section h2 {
@@ -45,21 +55,29 @@ a:hover {
 
 .card {
     background: #fff;
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.project-card {
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    color: #fff;
 }
 
 .card-body h5 {
     margin-bottom: 1em;
+    cursor: pointer;
 }
 
 .timeline {
     position: relative;
     padding: 1em 0;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .timeline:before {
@@ -95,11 +113,20 @@ a:hover {
     left: 50%;
     width: 40px;
     height: 40px;
-    background: #007bff;
-    border: 2px solid #fff;
+    background: #fff;
+    border: 2px solid #007bff;
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-item .company-logo {
+    width: 100%;
+    height: auto;
+    max-width: 30px;
 }
 
 .timeline-item .timeline-content {
@@ -117,4 +144,24 @@ a:hover {
 
 .timeline-item .timeline-content ul {
     padding-left: 20px;
+}
+
+.contact-form {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.contact-form .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+}
+
+.contact-form .form-control::placeholder {
+    color: #fff;
+}
+
+.contact-form .btn {
+    background: #ff4e50;
+    border: none;
 }
