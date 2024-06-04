@@ -11,7 +11,7 @@
 <body>
     <header class="bg-primary text-white text-center py-5">
         <div class="container">
-            <img src="profile.jpg" alt="Vignesh Kumar Karthikeyan" class="rounded-circle mb-3" width="150">
+            <img src="profile.jpg" alt="Vignesh Kumar Karthikeyan" class="rounded-circle mb-3 profile-img">
             <h1 class="mt-3">Vignesh Kumar Karthikeyan</h1>
             <p>720-655-0376 | <a href="mailto:kvk1011@gmail.com" class="text-white">kvk1011@gmail.com</a></p>
             <p><a href="https://www.linkedin.com/in/k-vignesh-kumar/" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a> | <a href="https://github.com/ivky03" class="text-white"><i class="fab fa-github"></i> GitHub</a></p>
@@ -19,38 +19,44 @@
     </header>
 
     <div class="container my-5">
-        <section class="mb-5">
-            <h2>Introduction</h2>
-            <p>Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
+        <section class="mb-5 introduction">
+            <h2 class="text-center">Introduction</h2>
+            <p class="text-center">Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
         </section>
 
         <section class="mb-5">
-            <h2>Projects</h2>
+            <h2 class="text-center">Projects</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 shadow-sm project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Movie Recommendation Engine</h5>
-                            <p class="card-text">Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy. Developed a hybrid movie recommendation system combining collaborative and content filtering.</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#movieRecommendationModal">Learn More</a>
+                            <h5 class="card-title project-header" data-toggle="collapse" data-target="#project1-details">Movie Recommendation Engine</h5>
+                            <div id="project1-details" class="collapse">
+                                <p class="card-text">Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy. Developed a hybrid movie recommendation system combining collaborative and content filtering.</p>
+                                <a href="https://github.com/ivky03/Movie-Recommendation-System" target="_blank" class="btn btn-primary">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 shadow-sm project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Wind Power Prediction</h5>
-                            <p class="card-text">Developed an ensemble model improving wind farm output prediction accuracy to 82%. Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#windPowerPredictionModal">Learn More</a>
+                            <h5 class="card-title project-header" data-toggle="collapse" data-target="#project2-details">Wind Power Prediction</h5>
+                            <div id="project2-details" class="collapse">
+                                <p class="card-text">Developed an ensemble model improving wind farm output prediction accuracy to 82%. Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</p>
+                                <a href="https://github.com/ivky03/Wind-Power-Forecasting-using-Ensemble-Learning" target="_blank" class="btn btn-primary">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
+                    <div class="card mb-4 shadow-sm project-card">
                         <div class="card-body">
-                            <h5 class="card-title">Simple ChatBot for Retail Store</h5>
-                            <p class="card-text">Designed a conversational chatbot leveraging NLTK and deep learning techniques. Automated responses to 95% of common product questions, increasing customer satisfaction.</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#chatBotModal">Learn More</a>
+                            <h5 class="card-title project-header" data-toggle="collapse" data-target="#project3-details">Simple ChatBot for Retail Store</h5>
+                            <div id="project3-details" class="collapse">
+                                <p class="card-text">Designed a conversational chatbot leveraging NLTK and deep learning techniques. Automated responses to 95% of common product questions, increasing customer satisfaction.</p>
+                                <a href="https://github.com/ivky03/Chat-Box-for-retail-store" target="_blank" class="btn btn-primary">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,11 +64,59 @@
         </section>
 
         <section class="mb-5">
-            <h2>Experience</h2>
+            <h2 class="text-center">Education</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">University of Colorado Boulder</h5>
+                            <p class="card-text">Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)<br>Aug 2023 – May 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">College of Engineering Guindy, Anna University</h5>
+                            <p class="card-text">B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)<br>Aug 2019 – Apr 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="text-center">Certifications and Extracurricular Activities</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Certifications</h5>
+                            <ul>
+                                <li>Generative AI (LinkedIn Learning)</li>
+                                <li>Data Structures in Python (University of Michigan)</li>
+                                <li>Data Analytics: Pandas (GUVI IIT Madras)</li>
+                                <li>Foundations of User Experience (UX) Design (Google)</li>
+                            </ul>
+                            <h5 class="card-title">Extracurricular Activities</h5>
+                            <ul>
+                                <li>Director of the American Association of Engineers of Indian Origin (AAEIO) - CU Boulder Chapter</li>
+                                <li>Toastmasters Certification - Presentation Mastery 1 (PM1)</li>
+                                <li>Competitions: Apple Design-a-thon, International Teenager Design and Art Award</li>
+                                <li>Foreign Languages: JLPT N5 Japanese, DELF A1 French</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-center">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <img src="CU.jpeg" alt="University of Colorado Boulder" width="50">
+                        <img src="CU.jpg" alt="University of Colorado Boulder" class="company-logo">
                     </div>
                     <div class="timeline-content">
                         <h3>HVAC Data Automation Developer</h3>
@@ -76,7 +130,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-icon">
-                        <img src="Intel.png" alt="Intel Corporation" width="50">
+                        <img src="Intel.png" alt="Intel Corporation" class="company-logo">
                     </div>
                     <div class="timeline-content">
                         <h3>IT Client Engineer</h3>
@@ -92,8 +146,8 @@
         </section>
 
         <section>
-            <h2>Contact</h2>
-            <form id="contact-form">
+            <h2 class="text-center">Contact</h2>
+            <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" required>
@@ -111,89 +165,29 @@
         </section>
     </div>
 
-    <!-- Movie Recommendation Modal -->
-    <div class="modal fade" id="movieRecommendationModal" tabindex="-1" role="dialog" aria-labelledby="movieRecommendationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="movieRecommendationModalLabel">Movie Recommendation Engine and Revenue Prediction</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Python, Machine Learning, Dec 2023</p>
-                    <ul>
-                        <li>Enhanced a linear regression model for predicting movie revenues, achieving 70.34% accuracy.</li>
-                        <li>Developed a hybrid movie recommendation system combining collaborative and content filtering.</li>
-                        <li>GitHub Repository: <a href="https://github.com/ivky03/Movie-Recommendation-System" target="_blank">Movie Recommendation System</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Wind Power Prediction Modal -->
-    <div class="modal fade" id="windPowerPredictionModal" tabindex="-1" role="dialog" aria-labelledby="windPowerPredictionModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="windPowerPredictionModalLabel">Wind Power Prediction using Ensemble Learning</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Python, TensorFlow, XGBoost, Apr 2023</p>
-                    <ul>
-                        <li>Developed an ensemble model improving wind farm output prediction accuracy to 82%.</li>
-                        <li>Achieved 18% reduction in mean absolute error compared to the KDD 2022 cup winning model.</li>
-                        <li>GitHub Repository: <a href="https://github.com/ivky03/Wind-Power-Forecasting-using-Ensemble-Learning" target="_blank">Wind Power Forecasting</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ChatBot Modal -->
-    <div class="modal fade" id="chatBotModal" tabindex="-1" role="dialog" aria-labelledby="chatBotModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="chatBotModalLabel">Simple ChatBot for Retail Store</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Python, PyTorch, NLTK, Apr 2022</p>
-                    <ul>
-                        <li>Designed a conversational chatbot leveraging NLTK and deep learning techniques.</li>
-                        <li>Automated responses to 95% of common product questions, increasing customer satisfaction.</li>
-                        <li>GitHub Repository: <a href="https://github.com/ivky03/Chat-Box-for-retail-store" target="_blank">Chat Box for Retail Store</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
-        (function() {
-            emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
-        })();
+        $(document).ready(function() {
+            $('.project-header').click(function() {
+                $(this).next('.collapse').collapse('toggle');
+            });
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-                .then(function() {
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    alert('Failed to send message: ' + error);
-                });
+            (function() {
+                emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
+            })();
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                    .then(function() {
+                        alert('Message sent successfully!');
+                    }, function(error) {
+                        alert('Failed to send message: ' + error);
+                    });
+            });
         });
     </script>
 </body>
