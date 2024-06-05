@@ -29,10 +29,10 @@
             <p class="text-center">Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
         </section>
 
-       <section class="mb-5">
+     <section class="mb-5">
     <h2 class="text-center">Projects</h2>
-    <div id="projectsCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
-        <div class="carousel-inner">
+    <div id="carouselExample" class="carousel-container">
+        <div class="carousel-content">
             <div class="carousel-item active">
                 <div class="card mb-4 shadow-sm project-card">
                     <div class="card-body">
@@ -88,16 +88,17 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#" role="button">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#" role="button">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
 </section>
+
 
 
         <section>
@@ -305,6 +306,39 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.carousel-content');
+        const items = document.querySelectorAll('.carousel-item');
+        const prev = document.querySelector('.carousel-control-prev');
+        const next = document.querySelector('.carousel-control-next');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (index + items.length) % items.length;
+            items[currentIndex].classList.add('active');
+        }
+
+        prev.addEventListener('click', function(event) {
+            event.preventDefault();
+            showItem(currentIndex - 1);
+        });
+
+        next.addEventListener('click', function(event) {
+            event.preventDefault();
+            showItem(currentIndex + 1);
+        });
+
+        setInterval(() => {
+            showItem(currentIndex + 1);
+        }, 10000); // Change slide every 10 seconds
+
+        // Initialize first item
+        items[0].classList.add('active');
+    });
+</script>
+
 </body>
 </html>
 
