@@ -148,10 +148,6 @@
         </section>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.project-header').click(function() {
@@ -171,86 +167,87 @@
                         alert('Failed to send message: ' + error);
                     });
             });
-        });
 
-        const timelineData = [
-            {
-                type: 'education',
-                title: 'University of Colorado Boulder',
-                subtitle: "Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)",
-                date: '2023-08',
-                endDate: '2025-05',
-                logo: 'CU.jpeg',
-                details: 'Aug 2023 – May 2025'
-            },
-            {
-                type: 'education',
-                title: 'College of Engineering Guindy, Anna University',
-                subtitle: 'B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)',
-                date: '2019-08',
-                endDate: '2023-04',
-                logo: 'AU.jpg',
-                details: 'Aug 2019 – Apr 2023'
-            },
-            {
-                type: 'work',
-                title: 'HVAC Data Automation Developer',
-                subtitle: 'University of Colorado Boulder - Facilities Management',
-                date: '2023-10',
-                endDate: '2024-04',
-                logo: 'CU.jpeg',
-                details: `
-                    <ul>
-                        <li>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow.</li>
-                        <li>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500.</li>
-                    </ul>
-                `
-            },
-            {
-                type: 'work',
-                title: 'IT Client Engineer',
-                subtitle: 'Intel Corporation',
-                date: '2023-01',
-                endDate: '2023-06',
-                logo: 'Intel.png',
-                details: `
-                    <ul>
-                        <li>Automated JSON data extraction for 65000 devices through REST APIs.</li>
-                        <li>Conducted analysis on around 80,000+ Intel devices.</li>
-                    </ul>
-                `
+            // Dynamic Timeline Rendering
+            const timelineData = [
+                {
+                    type: 'education',
+                    title: 'University of Colorado Boulder',
+                    subtitle: "Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)",
+                    date: '2023-08',
+                    endDate: '2025-05',
+                    logo: 'CU.jpeg',
+                    details: 'Aug 2023 – May 2025'
+                },
+                {
+                    type: 'education',
+                    title: 'College of Engineering Guindy, Anna University',
+                    subtitle: 'B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)',
+                    date: '2019-08',
+                    endDate: '2023-04',
+                    logo: 'AU.jpg',
+                    details: 'Aug 2019 – Apr 2023'
+                },
+                {
+                    type: 'work',
+                    title: 'HVAC Data Automation Developer',
+                    subtitle: 'University of Colorado Boulder - Facilities Management',
+                    date: '2023-10',
+                    endDate: '2024-04',
+                    logo: 'CU.jpeg',
+                    details: `
+                        <ul>
+                            <li>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow.</li>
+                            <li>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500.</li>
+                        </ul>
+                    `
+                },
+                {
+                    type: 'work',
+                    title: 'IT Client Engineer',
+                    subtitle: 'Intel Corporation',
+                    date: '2023-01',
+                    endDate: '2023-06',
+                    logo: 'Intel.png',
+                    details: `
+                        <ul>
+                            <li>Automated JSON data extraction for 65000 devices through REST APIs.</li>
+                            <li>Conducted analysis on around 80,000+ Intel devices.</li>
+                        </ul>
+                    `
+                }
+            ];
+
+            function sortTimelineData(data) {
+                return data.sort((a, b) => new Date(a.date) - new Date(b.date));
             }
-        ];
 
-        function sortTimelineData(data) {
-            return data.sort((a, b) => new Date(a.date) - new Date(b.date));
-        }
+            function createTimelineItem(item, index) {
+                const side = item.type === 'education' ? 'left' : 'right';
 
-        function createTimelineItem(item, index) {
-            const side = item.type === 'education' ? 'left' : 'right';
-
-            return `
-                <div class="timeline-item ${side}">
-                    <div class="timeline-content">
-                        <div class="timeline-logo">
-                            <img src="${item.logo}" alt="${item.title} logo" class="company-logo">
+                return `
+                    <div class="timeline-item ${side}">
+                        <div class="timeline-content">
+                            <div class="timeline-logo">
+                                <img src="${item.logo}" alt="${item.title} logo" class="company-logo">
+                            </div>
+                            <h3>${item.title}</h3>
+                            <p><strong>${item.subtitle}</strong></p>
+                            <p class="timeline-date">${item.date} - ${item.endDate}</p>
+                            <p>${item.details}</p>
                         </div>
-                        <h3>${item.title}</h3>
-                        <p><strong>${item.subtitle}</strong></p>
-                        <p class="timeline-date">${item.date} - ${item.endDate}</p>
-                        <p>${item.details}</p>
                     </div>
-                </div>
-            `;
-        }
+                `;
+            }
 
-        function renderTimeline() {
-            const sortedData = sortTimelineData(timelineData);
-            const timeline = document.getElementById('timeline');
-            timeline.innerHTML = sortedData.map(createTimelineItem).join('');
-        }
+            function renderTimeline() {
+                const sortedData = sortTimelineData(timelineData);
+                const timeline = document.getElementById('timeline');
+                timeline.innerHTML = sortedData.map(createTimelineItem).join('');
+            }
 
-        document.addEventListener('DOMContentLoaded', renderTimeline);
+            document.addEventListener('DOMContentLoaded', renderTimeline);
+        });
     </script>
 </body>
 </html>
