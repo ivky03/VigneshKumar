@@ -15,8 +15,8 @@ header {
 }
 
 header .profile-img {
-    width: 100px; /* Adjusted width */
-    height: 100px; /* Adjusted height */
+    width: 150px; /* Adjusted width */
+    height: 150px; /* Adjusted height */
     border-radius: 50%; /* Ensures the image is circular */
     object-fit: cover;
     border: 5px solid #fff;
