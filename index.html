@@ -143,6 +143,7 @@
             </div>
         </section>
         <script>
+
     const timelineData = [
         {
             type: 'education',
@@ -159,7 +160,7 @@
             subtitle: 'B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)',
             date: '2019-08',
             endDate: '2023-04',
-            logo: 'AU.jpeg',
+            logo: 'AnnaUniversity.jpg',
             details: 'Aug 2019 – Apr 2023'
         },
         {
@@ -197,11 +198,11 @@
     }
 
     function createTimelineItem(item, index) {
-        const itemPosition = index % 2 === 0 ? 'left' : 'right';
-        const logoPosition = itemPosition === 'left' ? 'logo-left' : 'logo-right';
+        const side = item.type === 'education' ? 'left' : 'right';
+        const logoPosition = side === 'left' ? 'logo-left' : 'logo-right';
 
         return `
-            <div class="timeline-item ${itemPosition}">
+            <div class="timeline-item ${side}">
                 <div class="timeline-icon ${logoPosition}">
                     <img src="${item.logo}" alt="${item.title} logo" class="company-logo">
                 </div>
