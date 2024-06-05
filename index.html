@@ -65,7 +65,7 @@
 
         <section>
             <h2 class="text-center">Experience & Education</h2>
-            <div class="timeline">
+            <div class="timeline" id="timeline">
                 <!-- Work Experience -->
                 <div class="timeline-item">
                     <div class="timeline-icon">
@@ -116,7 +116,7 @@
                 </div>
             </div>
         </section>
-
+        
         <section class="mb-5">
             <h2 class="text-center">Certifications and Extracurricular Activities</h2>
             <div class="row">
@@ -142,7 +142,86 @@
                 </div>
             </div>
         </section>
+        <script>
+    const timelineData = [
+        {
+            type: 'education',
+            title: 'University of Colorado Boulder',
+            subtitle: "Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)",
+            date: '2023-08',
+            endDate: '2025-05',
+            logo: 'UniversityOfColoradoBoulder.jpg',
+            details: 'Aug 2023 – May 2025'
+        },
+        {
+            type: 'education',
+            title: 'College of Engineering Guindy, Anna University',
+            subtitle: 'B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)',
+            date: '2019-08',
+            endDate: '2023-04',
+            logo: 'AnnaUniversity.jpg',
+            details: 'Aug 2019 – Apr 2023'
+        },
+        {
+            type: 'work',
+            title: 'HVAC Data Automation Developer',
+            subtitle: 'University of Colorado Boulder - Facilities Management',
+            date: '2023-10',
+            endDate: '2024-04',
+            logo: 'CU.jpg',
+            details: `
+                <ul>
+                    <li>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow.</li>
+                    <li>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500.</li>
+                </ul>
+            `
+        },
+        {
+            type: 'work',
+            title: 'IT Client Engineer',
+            subtitle: 'Intel Corporation',
+            date: '2023-01',
+            endDate: '2023-06',
+            logo: 'Intel.png',
+            details: `
+                <ul>
+                    <li>Automated JSON data extraction for 65000 devices through REST APIs.</li>
+                    <li>Conducted analysis on around 80,000+ Intel devices.</li>
+                </ul>
+            `
+        }
+    ];
 
+    function sortTimelineData(data) {
+        return data.sort((a, b) => new Date(a.date) - new Date(b.date));
+    }
+
+    function createTimelineItem(item, index) {
+        const itemPosition = index % 2 === 0 ? 'left' : 'right';
+        const logoPosition = itemPosition === 'left' ? 'right' : 'left';
+
+        return `
+            <div class="timeline-item ${itemPosition}">
+                <div class="timeline-icon ${logoPosition}">
+                    <img src="${item.logo}" alt="${item.title} logo" class="company-logo">
+                </div>
+                <div class="timeline-content">
+                    <h3>${item.title}</h3>
+                    <p><strong>${item.subtitle}</strong></p>
+                    <p>${item.details}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderTimeline() {
+        const sortedData = sortTimelineData(timelineData);
+        const timeline = document.getElementById('timeline');
+        timeline.innerHTML = sortedData.map(createTimelineItem).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTimeline);
+</script>
         <section>
             <h2 class="text-center">Contact</h2>
             <form id="contact-form" class="contact-form">
