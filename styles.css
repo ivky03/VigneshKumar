@@ -153,3 +153,37 @@ a:hover {
     font-weight: bold;
     color: #007bff;
 }
+.project-card {
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    color: #fff;
+}
+
+.card-body h5 {
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    position: relative;
+    transition: transform 0.6s ease;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+}
