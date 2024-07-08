@@ -7,84 +7,97 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-    }
-    header {
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-    }
-    .profile-photo {
-        width: 150px;
-        border-radius: 50%;
-    }
-    .contact-info a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: #333;
-    }
-    .introduction {
-        padding: 20px;
-        text-align: center;
-        background-color: #ffe4e1;
-    }
-    .timeline {
-        position: relative;
-        margin: 20px 0;
-        padding: 20px 0;
-        background: #fff;
-    }
-    .timeline-container {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .timeline-title {
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    .timeline-item {
-        display: flex;
-        align-items: center;
-        margin: 20px 0;
-    }
-    .timeline-item::before {
-        content: '';
-        width: 50px;
-        height: 2px;
-        background: #333;
-        flex-shrink: 0;
-    }
-    .timeline-item-content {
-        background: white;
-        padding: 20px;
-        border-radius: 6px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-left: 20px;
-        position: relative;
-        width: 100%;
-    }
-    .timeline-item-content h3 {
-        margin-top: 0;
-    }
-    .timeline-item.education .timeline-item-content {
-        border-left: 5px solid #007bff;
-    }
-    .timeline-item.experience .timeline-item-content {
-        border-left: 5px solid #28a745;
-    }
-    .logo {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+.profile-photo {
+    width: 150px;
+    border-radius: 50%;
+}
+.contact-info a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+.introduction {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffe4e1;
+}
+.timeline {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px 0;
+    background: #fff;
+}
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.timeline-item::before {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: #333;
+    flex-shrink: 0;
+}
+.timeline-item-content {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+.timeline-item-content h3 {
+    margin-top: 0;
+}
+.timeline-item.education .timeline-item-content {
+    border-left: 5px solid #007bff;
+}
+.timeline-item.experience .timeline-item-content {
+    border-left: 5px solid #28a745;
+}
+.details {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+.timeline-item.expanded .details {
+    display: block;
+}
+.logo {
     width: 50px;
     height: 50px;
     margin-right: 20px;
     border-radius: 50%;
-    }
+}
+
+
     .details {
     display: none;
     transition: all 0.3s ease-in-out;
@@ -194,9 +207,18 @@
                 <h3>MSCS Course Facilitator - University of Colorado Boulder</h3>
                 <p class="summary">April 2024 – Present</p>
                 <div class="details">
-                    <p>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours.Engage actively in discussion forums, maintain course accuracy, provide detailed feedback, and update content as required, while adhering to educational standards and escalating critical issues promptly</p>
-                    <p>Course Facilitator in Online MSCS Degree for the following courses:CSCA 5502: Data Mining Pipeline,CSCA 5512: Data Mining Methods,CSCA 5522: Data Mining Project,CSCA 5622: Introduction to Machine Learning: Supervised Learning,CSCA 5632: Unsupervised Algorithms in Machine Learning,CSCA 5642: Introduction to Deep Learning</p>
-
+                    <p>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours. Engage actively in discussion forums, maintain course accuracy, provide detailed feedback, and update content as required, while adhering to educational standards and escalating critical issues promptly.</p>
+                    <p>Course Facilitator in Online MSCS Degree for the following courses:
+                    <ul>
+                        <li>CSCA 5502: Data Mining Pipeline</li>
+                        <li>CSCA 5512: Data Mining Methods</li>
+                        <li>CSCA 5522: Data Mining Project</li>
+                        <li>CSCA 5622: Introduction to Machine Learning: Supervised Learning</li>
+                        <li>CSCA 5632: Unsupervised Algorithms in Machine Learning</li>
+                        <li>CSCA 5642: Introduction to Deep Learning</li>
+                    </ul>
+                    </p>
+                </div>
             </div>
         </div>
         
@@ -206,25 +228,26 @@
                 <h3>HVAC Data Automation Developer - University of Colorado Boulder</h3>
                 <p class="summary">October 2023 – April 2024</p>
                 <div class="details">
-                    <p>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process</p>
-                    <p>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500, thereby enhancing accuracy and efficiency in compliance with city requirement</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item experience" onclick="expandDetails(this)">
-            <div class="timeline-item-content">
-                <img src="Intel.png" alt="Intel" class="logo">
-                <h3>IT Client Engineer - Intel Corporation</h3>
-                <p class="summary">January 2023 – June 2023</p>
-                <div class="details">
-                    <p>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes (enhancing efficiency by 90%)</p>
-                    <p>Conducted analysis on around 80,000+ Intel devices, performing Platform Ring Analysis and Fleet Health Monitoring</p>                
+                    <p>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process.</p>
+                    <p>Reduced manual entry time by over 95% and generated weekly cost savings exceeding $2500, thereby enhancing accuracy and efficiency in compliance with city requirement.</p>
                 </div>
             </div>
         </div>
         
+        <div class="timeline-item experience" onclick="expandDetails(this)">
+            <div class="timeline-item-content">
+                <img src="Intel.png" alt="Intel Corporation" class="logo">
+                <h3>IT Client Engineer - Intel Corporation</h3>
+                <p class="summary">January 2023 – June 2023</p>
+                <div class="details">
+                    <p>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes (enhancing efficiency by 90%).</p>
+                    <p>Conducted analysis on around 80,000+ Intel devices, performing Platform Ring Analysis and Fleet Health Monitoring.</p>                
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 
     <section class="projects">
         <h2>Projects</h2>
