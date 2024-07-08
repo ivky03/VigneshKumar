@@ -7,63 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-    body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-.container {
-    padding: 10px 20px;
-    position: relative;
-    width: 50%;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 }
 
-.left {
-    left: 0;
-}
-
-.right {
-    left: 50%;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    background-color: #333;
-}
-
-.left::before {
-    left: -3px;
-}
-
-.right::before {
-    left: -3px;
-}
-
-.content {
-    padding: 20px;
-    background: white;
-    position: relative;
-    border-radius: 6px;
-}
-
-.content .experience, .content .education {
-    display: flex;
-    align-items: center;
-}
-
-.company-logo, .school-logo {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
 header {
     text-align: center;
     padding: 20px;
+    background-color: #fff;
 }
 
 .profile-photo {
@@ -80,117 +34,86 @@ header {
 .introduction {
     padding: 20px;
     text-align: center;
+    background-color: #ffe4e1;
 }
 
 .timeline {
     position: relative;
     margin: 20px 0;
     padding: 20px 0;
-    background: #f9f9f9;
+    background: #fff;
 }
 
-.container {
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-item {
     padding: 10px 20px;
     position: relative;
     width: 50%;
 }
 
-.left {
-    left: 0;
-}
-
-.right {
-    left: 50%;
-}
-
-.container::after {
+.timeline-item::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.container::before {
+.timeline-item.left::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    background-color: #333;
+    top: 15px;
+    right: -7.5px;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 7.5px;
+    border-color: transparent transparent transparent #333;
 }
 
-.left::before {
-    left: -3px;
+.timeline-item.right::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -7.5px;
+    border-style: solid;
+    border-width: 7.5px 7.5px 7.5px 0;
+    border-color: transparent #333 transparent transparent;
 }
 
-.right::before {
-    left: -3px;
+.timeline-item.left {
+    left: 0;
 }
 
-.container .content {
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item .content {
     padding: 20px;
     background: white;
     position: relative;
     border-radius: 6px;
+    border: 1px solid #ddd;
 }
 
-.container.left .content {
+.timeline-item.left .content {
     margin-left: 20px;
 }
 
-.container.right .content {
+.timeline-item.right .content {
     margin-right: 20px;
 }
 
-.projects {
-    padding: 20px;
-    text-align: center;
+.company-logo, .school-logo {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
 }
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: 30%;
-    padding: 20px;
-    margin: 10px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.card-details {
-    display: none;
-}
-
-.card.expanded .card-details {
-    display: block;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.next-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
 </style>
+
 <body>
     <header>
         <img src="profile.jpg" alt="Vignesh Kumar Karthikeyan" class="profile-photo">
@@ -202,51 +125,52 @@ header {
     </header>
     <section class="introduction">
         <h1>Introduction</h1>
-        <p>Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions</p>
+        <p>Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
     </section>
-    <h1>Education & Work Experience</h1>
     <section class="timeline">
-    <div class="container left">
-        <div class="content">
-            <div class="education">
-                <img src="AU.png" alt="College of Engineering Guindy, Anna University" class="school-logo">
-                <p>College of Engineering Guindy, Anna University<br>B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)<br>Aug 2019 – Apr 2023</p>
+    <h1>Education & Work Experience</h1>
+    <div class="timeline-container">
+        <div class="timeline-item left">
+            <div class="content">
+                <div class="education">
+                    <img src="AU.png" alt="College of Engineering Guindy, Anna University" class="school-logo">
+                    <p>College of Engineering Guindy, Anna University<br>B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)<br>Aug 2019 – Apr 2023</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="content">
+                <div class="experience">
+                    <img src="Intel.png" alt="Intel Corporation" class="company-logo">
+                    <p><strong>IT Client Engineer</strong> - Intel Corporation<br>Jan 2023 – Jun 2023<br>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <div class="education">
+                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="school-logo">
+                    <p>University of Colorado Boulder<br>Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)<br>Aug 2023 – May 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="content">
+                <div class="experience">
+                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
+                    <p><strong>HVAC Data Automation Developer</strong> - University of Colorado Boulder<br>Oct 2023 – Apr 2024<br>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process...</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <div class="experience">
+                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
+                    <p><strong>MSCS Course Facilitator</strong> - University of Colorado Boulder<br>Apr 2024 – Present<br>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours...</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container right">
-        <div class="content">
-            <div class="experience">
-                <img src="Intel.png" alt="Intel Corporation" class="company-logo">
-                <p><strong>IT Client Engineer</strong> - Intel Corporation<br>Jan 2023 – Jun 2023<br>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
-            </div>
-        </div>
-    </div>
-    <div class="container left">
-        <div class="content">
-            <div class="education">
-                <img src="CU.jpeg" alt="University of Colorado Boulder" class="school-logo">
-                <p>University of Colorado Boulder<br>Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)<br>Aug 2023 – May 2025</p>
-            </div>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="content">
-            <div class="experience">
-                <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
-                <p><strong>HVAC Data Automation Developer</strong> - University of Colorado Boulder<br>Oct 2023 – Apr 2024<br>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process...</p>
-            </div>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="content">
-            <div class="experience">
-                <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
-                <p><strong>MSCS Course Facilitator</strong> - University of Colorado Boulder<br>Apr 2024-Present<br>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours...</p>
-            </div>
-        </div>
-    </div>
-    
 </section>
 
     <section class="projects">
@@ -256,26 +180,33 @@ header {
                 <h3>Movie Recommendation Engine and Revenue Prediction</h3>
                 <div class="card-details">
                     <p>Python, Machine Learning - Dec 2023<br>Enhanced a linear regression model for predicting movie revenues, achieving 70.34% outperforming KNeighbors and RandomForest Regressors...</p>
-                    <a href="https://github.com/your-github/movie-recommendation" target="_blank" class="btn">GitHub</a>
+                    <a href="https://github.com/ivky03/movie-recommendation" target="_blank" class="btn">GitHub</a>
                 </div>
             </div>
             <div class="card" onclick="expandCard(this)">
                 <h3>Wind Power Prediction using Ensemble Learning</h3>
                 <div class="card-details">
                     <p>Python, TensorFlow, XGBoost, Matplotlib - Apr 2023<br>Developed an ensemble model incorporating Transformer, Long Short Term Memory, and Gradient Boosting Decision Tree models...</p>
-                    <a href="https://github.com/your-github/wind-power-prediction" target="_blank" class="btn">GitHub</a>
+                    <a href="https://github.com/ivky03/wind-power-prediction" target="_blank" class="btn">GitHub</a>
                 </div>
             </div>
             <div class="card" onclick="expandCard(this)">
                 <h3>Simple ChatBot for Retail Store</h3>
                 <div class="card-details">
                     <p>Python, PyTorch, NLTK - Apr 2022<br>Designed and implemented a conversational chatbot leveraging NLTK and deep learning techniques, revolutionizing customer engagement and support processes...</p>
-                    <a href="https://github.com/your-github/chatbot" target="_blank" class="btn">GitHub</a>
+                    <a href="https://github.com/ivky03/chatbot" target="_blank" class="btn">GitHub</a>
                 </div>
             </div>
         </div>
         <button class="next-btn" onclick="showNextProjects()">Next</button>
     </section>
-    <script src="script.js"></script>
+    <script>
+        function expandCard(card) {
+            card.classList.toggle('expanded');
+        }
+        function showNextProjects() {
+            alert('Next projects will be shown here.');
+        }
+    </script>
 </body>
 </html>
