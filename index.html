@@ -43,6 +43,12 @@
         max-width: 1200px;
         margin: 0 auto;
     }
+    .timeline-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
     .timeline-item {
         display: flex;
         align-items: center;
@@ -111,14 +117,20 @@
         text-decoration: none;
         border-radius: 6px;
     }
-    .next-btn {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 6px;
+    .skills, .badges {
+        padding: 20px;
+        text-align: center;
+        background-color: #ffe4e1;
+    }
+    .skills h2, .badges h2 {
+        margin-top: 0;
+    }
+    .skills ul, .badges ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .skills li, .badges li {
+        margin: 5px 0;
     }
 </style>
 <body>
@@ -135,7 +147,7 @@
         <p>Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
     </section>
     <section class="timeline">
-        <h1>Education & Work Experience</h1>
+        <div class="timeline-title">Education</div>
         <div class="timeline-container">
             <div class="timeline-item education">
                 <div class="timeline-item-content">
@@ -144,18 +156,21 @@
                     <p>Aug 2019 – Apr 2023</p>
                 </div>
             </div>
-            <div class="timeline-item experience">
-                <div class="timeline-item-content">
-                    <h3>IT Client Engineer - Intel Corporation</h3>
-                    <p>Jan 2023 – Jun 2023</p>
-                    <p>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
-                </div>
-            </div>
             <div class="timeline-item education">
                 <div class="timeline-item-content">
                     <h3>University of Colorado Boulder</h3>
                     <p>Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA: 4.00/4.00)</p>
                     <p>Aug 2023 – May 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-title">Work Experience</div>
+        <div class="timeline-container">
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h3>IT Client Engineer - Intel Corporation</h3>
+                    <p>Jan 2023 – Jun 2023</p>
+                    <p>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
                 </div>
             </div>
             <div class="timeline-item experience">
@@ -198,46 +213,39 @@
                     <a href="https://github.com/ivky03/chatbot" target="_blank" class="btn">GitHub</a>
                 </div>
             </div>
+            <div class="card" onclick="expandCard(this)">
+                <h3>Charity System based on Blockchain</h3>
+                <div class="card-details">
+                    <p>Solidity, React - Nov 2022<br>Developed decentralized charity platform on Ethereum using smart contracts for beneficiaries to request funds, validators to verify, and donors to contribute post-approval. Leveraged blockchain technology to enable transparent donations without centralized authority.</p>
+                    <a href="https://github.com/ivky03/charity-system" target="_blank" class="btn">GitHub</a>
+                </div>
+            </div>
+            <div class="card" onclick="expandCard(this)">
+                <h3>Image Style Transfer</h3>
+                <div class="card-details">
+                    <p>Implemented neural style transfer using a pre-trained ResNet50.<br>Reviewed the 2015 paper, A Neural Algorithm of Artistic Style, and implemented the technique using a different DCNN. Explored a structure that was proven to be great for image classification, resulting in a successful style transfer implementation.</p>
+                    <a href="http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006" target="_blank" class="btn">Link</a>
+                </div>
+            </div>
         </div>
-        <button class="next-btn" onclick="showNextProjects()">Next</button>
+    </section>
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Languages:</strong> Java, Python (NumPy, Pandas, PyTorch, Keras, TensorFlow, Matplotlib, Scikit-learn, Selenium), C, C++, Shell Script, HTML/CSS, R, JavaScript, Go, GraphQL</li>
+            <li><strong>Databases:</strong> MySQL, Firebase, IBM DB2, Postgres</li>
+            <li><strong>AI and Cloud Services, Developer Tools and Technologies:</strong> Query Engineering (ChatGPT, Copilot, Claude AI, Gemini), AWS (S3, SQS), Docker, Kubernetes, Jupyter Notebook, Aternity, Google Colab, VS Code, PyCharm, IntelliJ, Eclipse, Github</li>
+        </ul>
+    </section>
+    <section class="badges">
+        <h2>Badges</h2>
+        <ul>
+            <li><a href="https://www.cloudskillsboost.google/public_profiles/81985a1a-13d1-4e2f-b503-cf0fc2851bca" target="_blank">Generative AI with Google</a></li>
+        </ul>
     </section>
     <script>
         function expandCard(card) {
             card.classList.toggle('expanded');
-        }
-        function showNextProjects() {
-            const projectCards = document.querySelector('.project-cards');
-            const newProjects = [
-                {
-                    title: 'Charity System based on Blockchain',
-                    details: 'Solidity, React - Nov 2022<br>Developed decentralized charity platform on Ethereum using smart contracts for beneficiaries to request funds, validators to verify, and donors to contribute post-approval. Leveraged blockchain technology to enable transparent donations without centralized authority.',
-                    link: 'https://github.com/ivky03/charity-system'
-                },
-                {
-                    title: 'Image Style Transfer',
-                    details: 'Implemented neural style transfer using a pre-trained ResNet50.<br>Reviewed the 2015 paper, A Neural Algorithm of Artistic Style, and implemented the technique using a different DCNN. Explored a structure that was proven to be great for image classification, resulting in a successful style transfer implementation.',
-                    link: 'http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006'
-                }
-            ];
-
-            newProjects.forEach(project => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.onclick = () => expandCard(card);
-
-                const title = document.createElement('h3');
-                title.textContent = project.title;
-
-                const details = document.createElement('div');
-                details.className = 'card-details';
-                details.innerHTML = `<p>${project.details}</p><a href="${project.link}" target="_blank" class="btn">GitHub</a>`;
-
-                card.appendChild(title);
-                card.appendChild(details);
-                projectCards.appendChild(card);
-            });
-
-            document.querySelector('.next-btn').style.display = 'none';
         }
     </script>
 </body>
