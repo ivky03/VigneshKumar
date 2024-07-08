@@ -1,119 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vignesh Kumar Karthikeyan Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-}
-
-.profile-photo {
-    width: 150px;
-    border-radius: 50%;
-}
-
-.contact-info a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-.introduction {
-    padding: 20px;
-    text-align: center;
-    background-color: #ffe4e1;
-}
-
-.timeline {
-    position: relative;
-    margin: 20px 0;
-    padding: 20px 0;
-    background: #fff;
-}
-
-.timeline-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.timeline-item {
-    padding: 10px 20px;
-    position: relative;
-    width: 50%;
-}
-
-.timeline-item::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.timeline-item.left::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -7.5px;
-    border-style: solid;
-    border-width: 7.5px 0 7.5px 7.5px;
-    border-color: transparent transparent transparent #333;
-}
-
-.timeline-item.right::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -7.5px;
-    border-style: solid;
-    border-width: 7.5px 7.5px 7.5px 0;
-    border-color: transparent #333 transparent transparent;
-}
-
-.timeline-item.left {
-    left: 0;
-}
-
-.timeline-item.right {
-    left: 50%;
-}
-
-.timeline-item .content {
-    padding: 20px;
-    background: white;
-    position: relative;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-}
-
-.timeline-item.left .content {
-    margin-left: 20px;
-}
-
-.timeline-item.right .content {
-    margin-right: 20px;
-}
-
-.company-logo, .school-logo {
-    width: 50px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    }
+    header {
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+    }
+    .profile-photo {
+        width: 150px;
+        border-radius: 50%;
+    }
+    .contact-info a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+    }
+    .introduction {
+        padding: 20px;
+        text-align: center;
+        background-color: #ffe4e1;
+    }
+    .timeline {
+        position: relative;
+        margin: 20px 0;
+        padding: 20px 0;
+        background: #fff;
+    }
+    .timeline-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .timeline-bar {
+        position: relative;
+        background: #e0e0e0;
+        height: 40px;
+        margin: 20px 0;
+        border-radius: 20px;
+        padding: 0 20px;
+    }
+    .timeline-bar .label {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        right: 20px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+    }
+    .timeline-bar .education,
+    .timeline-bar .experience {
+        position: absolute;
+        top: 10px;
+        height: 20px;
+        border-radius: 10px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        font-size: 12px;
+    }
+    .timeline-bar .education {
+        background: #007bff;
+    }
+    .timeline-bar .experience {
+        background: #28a745;
+    }
 </style>
-
 <body>
     <header>
         <img src="profile.jpg" alt="Vignesh Kumar Karthikeyan" class="profile-photo">
@@ -128,50 +84,24 @@ header {
         <p>Hello! I am Vignesh Kumar Karthikeyan, a passionate software developer specializing in AI and Data Science. I enjoy solving complex problems and building innovative solutions.</p>
     </section>
     <section class="timeline">
-    <h1>Education & Work Experience</h1>
-    <div class="timeline-container">
-        <div class="timeline-item left">
-            <div class="content">
-                <div class="education">
-                    <img src="AU.png" alt="College of Engineering Guindy, Anna University" class="school-logo">
-                    <p>College of Engineering Guindy, Anna University<br>B.E in Computer Science and Engineering - First Class with Distinction (CGPA : 3.45/4.00)<br>Aug 2019 – Apr 2023</p>
-                </div>
+        <h1>Education & Work Experience</h1>
+        <div class="timeline-container">
+            <div class="timeline-bar">
+                <div class="label">Aug 2019 – Apr 2023: College of Engineering Guindy, Anna University</div>
+                <div class="education" style="left: 0%; width: 80%;">B.E in Computer Science and Engineering</div>
+                <div class="experience" style="left: 70%; width: 30%;">IT Client Engineer - Intel Corporation (Jan 2023 – Jun 2023)</div>
+            </div>
+            <div class="timeline-bar">
+                <div class="label">Aug 2023 – May 2025: University of Colorado Boulder</div>
+                <div class="education" style="left: 0%; width: 100%;">Master’s in Computer Science (A.I and Data Science)</div>
+                <div class="experience" style="left: 10%; width: 40%;">HVAC Data Automation Developer - CU Boulder (Oct 2023 – Apr 2024)</div>
+                <div class="experience" style="left: 50%; width: 50%;">MSCS Course Facilitator - CU Boulder (Apr 2024 – Present)</div>
             </div>
         </div>
-        <div class="timeline-item right">
-            <div class="content">
-                <div class="experience">
-                    <img src="Intel.png" alt="Intel Corporation" class="company-logo">
-                    <p><strong>IT Client Engineer</strong> - Intel Corporation<br>Jan 2023 – Jun 2023<br>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item left">
-            <div class="content">
-                <div class="education">
-                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="school-logo">
-                    <p>University of Colorado Boulder<br>Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA : 4.00/4.00)<br>Aug 2023 – May 2025</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item right">
-            <div class="content">
-                <div class="experience">
-                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
-                    <p><strong>HVAC Data Automation Developer</strong> - University of Colorado Boulder<br>Oct 2023 – Apr 2024<br>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process...</p>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item left">
-            <div class="content">
-                <div class="experience">
-                    <img src="CU.jpeg" alt="University of Colorado Boulder" class="company-logo">
-                    <p><strong>MSCS Course Facilitator</strong> - University of Colorado Boulder<br>Apr 2024 – Present<br>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</body>
+</html>
+Explanation:
 
     <section class="projects">
         <h2>Projects</h2>
