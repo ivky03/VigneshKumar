@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignesh Kumar Karthikeyan Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -35,39 +43,82 @@
         max-width: 1200px;
         margin: 0 auto;
     }
-    .timeline-bar {
-        position: relative;
-        background: #e0e0e0;
-        height: 40px;
+    .timeline-item {
+        display: flex;
+        align-items: center;
         margin: 20px 0;
-        border-radius: 20px;
-        padding: 0 20px;
     }
-    .timeline-bar .label {
-        position: absolute;
-        top: 0;
-        left: 20px;
-        right: 20px;
+    .timeline-item::before {
+        content: '';
+        width: 50px;
+        height: 2px;
+        background: #333;
+        flex-shrink: 0;
+    }
+    .timeline-item-content {
+        background: white;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        position: relative;
+        width: 100%;
+    }
+    .timeline-item-content h3 {
+        margin-top: 0;
+    }
+    .timeline-item.education .timeline-item-content {
+        border-left: 5px solid #007bff;
+    }
+    .timeline-item.experience .timeline-item-content {
+        border-left: 5px solid #28a745;
+    }
+    .projects {
+        padding: 20px;
         text-align: center;
-        line-height: 40px;
-        font-weight: bold;
+        background-color: #ffe4e1;
     }
-    .timeline-bar .education,
-    .timeline-bar .experience {
-        position: absolute;
-        top: 10px;
-        height: 20px;
-        border-radius: 10px;
-        line-height: 20px;
-        color: #fff;
-        text-align: center;
-        font-size: 12px;
+    .project-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    .timeline-bar .education {
+    .card {
+        width: 30%;
+        padding: 20px;
+        margin: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card-details {
+        display: none;
+    }
+    .card.expanded .card-details {
+        display: block;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
         background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
     }
-    .timeline-bar .experience {
-        background: #28a745;
+    .next-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
     }
 </style>
 <body>
@@ -86,23 +137,43 @@
     <section class="timeline">
         <h1>Education & Work Experience</h1>
         <div class="timeline-container">
-            <div class="timeline-bar">
-                <div class="label">Aug 2019 – Apr 2023: College of Engineering Guindy, Anna University</div>
-                <div class="education" style="left: 0%; width: 80%;">B.E in Computer Science and Engineering</div>
-                <div class="experience" style="left: 70%; width: 30%;">IT Client Engineer - Intel Corporation (Jan 2023 – Jun 2023)</div>
+            <div class="timeline-item education">
+                <div class="timeline-item-content">
+                    <h3>College of Engineering Guindy, Anna University</h3>
+                    <p>B.E in Computer Science and Engineering - First Class with Distinction (CGPA: 3.45/4.00)</p>
+                    <p>Aug 2019 – Apr 2023</p>
+                </div>
             </div>
-            <div class="timeline-bar">
-                <div class="label">Aug 2023 – May 2025: University of Colorado Boulder</div>
-                <div class="education" style="left: 0%; width: 100%;">Master’s in Computer Science (A.I and Data Science)</div>
-                <div class="experience" style="left: 10%; width: 40%;">HVAC Data Automation Developer - CU Boulder (Oct 2023 – Apr 2024)</div>
-                <div class="experience" style="left: 50%; width: 50%;">MSCS Course Facilitator - CU Boulder (Apr 2024 – Present)</div>
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h3>IT Client Engineer - Intel Corporation</h3>
+                    <p>Jan 2023 – Jun 2023</p>
+                    <p>Automated JSON data extraction for 65000 devices, through REST APIs by developing an efficient code that reduced workload from 2 hours to just 10 minutes...</p>
+                </div>
+            </div>
+            <div class="timeline-item education">
+                <div class="timeline-item-content">
+                    <h3>University of Colorado Boulder</h3>
+                    <p>Master’s in Computer Science (Specialization in A.I and Data Science) (CGPA: 4.00/4.00)</p>
+                    <p>Aug 2023 – May 2025</p>
+                </div>
+            </div>
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h3>HVAC Data Automation Developer - University of Colorado Boulder</h3>
+                    <p>Oct 2023 – Apr 2024</p>
+                    <p>Developed a Python-based automation code using Selenium for the City of Boulder BackFlow, significantly streamlining the backflow data entry process...</p>
+                </div>
+            </div>
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h3>MSCS Course Facilitator - University of Colorado Boulder</h3>
+                    <p>Apr 2024 – Present</p>
+                    <p>Oversee student support and course content for the courses, ensuring timely responses in Salesforce and regular online office hours...</p>
+                </div>
             </div>
         </div>
     </section>
-</body>
-</html>
-Explanation:
-
     <section class="projects">
         <h2>Projects</h2>
         <div class="project-cards">
@@ -135,7 +206,38 @@ Explanation:
             card.classList.toggle('expanded');
         }
         function showNextProjects() {
-            alert('Next projects will be shown here.');
+            const projectCards = document.querySelector('.project-cards');
+            const newProjects = [
+                {
+                    title: 'Charity System based on Blockchain',
+                    details: 'Solidity, React - Nov 2022<br>Developed decentralized charity platform on Ethereum using smart contracts for beneficiaries to request funds, validators to verify, and donors to contribute post-approval. Leveraged blockchain technology to enable transparent donations without centralized authority.',
+                    link: 'https://github.com/ivky03/charity-system'
+                },
+                {
+                    title: 'Image Style Transfer',
+                    details: 'Implemented neural style transfer using a pre-trained ResNet50.<br>Reviewed the 2015 paper, A Neural Algorithm of Artistic Style, and implemented the technique using a different DCNN. Explored a structure that was proven to be great for image classification, resulting in a successful style transfer implementation.',
+                    link: 'http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006'
+                }
+            ];
+
+            newProjects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => expandCard(card);
+
+                const title = document.createElement('h3');
+                title.textContent = project.title;
+
+                const details = document.createElement('div');
+                details.className = 'card-details';
+                details.innerHTML = `<p>${project.details}</p><a href="${project.link}" target="_blank" class="btn">GitHub</a>`;
+
+                card.appendChild(title);
+                card.appendChild(details);
+                projectCards.appendChild(card);
+            });
+
+            document.querySelector('.next-btn').style.display = 'none';
         }
     </script>
 </body>
